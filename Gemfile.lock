@@ -42,6 +42,7 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.9.0)
     rspec-support (3.9.2)
+    rukuli (1.0.3)
 
 PLATFORMS
   ruby
@@ -51,6 +52,7 @@ DEPENDENCIES
   pry
   rake
   rspec
+  rukuli
 
 BUNDLED WITH
-   1.17.2
+   2.1.4

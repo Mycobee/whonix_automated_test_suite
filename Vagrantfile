@@ -8,16 +8,61 @@
 ENV['VAGRANT_DEFAULT_PROVIDER'] = 'libvirt'
 
 Vagrant.configure("2") do |config|
+
   # The most common configuration options are documented and commented below.
   # For a complete reference, please see the online documentation at
   # https://docs.vagrantup.com.
   
+  Vagrant.configure("2") do |config|
+    config.vm.define :test_vm do |test_vm|
+      test_vm.vm.box = "debian/stretch64"
+    end
+  end
+
+
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
-  config.vm.define :test_vm do |test_vm|
-    test_vm.vm.box =  "debian/jessie64"
-  end
-  
+  #config.vm.define :whonix_vm do |whonix_vm|
+  #  whonix_vm.vm.box =  "debian/jessie64"
+  #  whonix_vm.machine_type =  "debian/jessie64"
+  #  whonix_vm.machine_arch =  "x86_64"
+  #end
+  #
+  #config.vm.provider :libvirt do |domain|
+  #  domain.default_prefix = config.vm.box
+  #  domain.driver = 'kvm'
+  #  domain.management_network_guest_ipv6 = 'no'
+  #  domain.connect_via_ssh = false
+  #  domain.machine_arch = 'x86_64'
+  #  if ENV['TAILS_BUILD_MACHINE_TYPE']
+  #    domain.machine_type = ENV['TAILS_BUILD_MACHINE_TYPE']
+  #  else
+  #    domain.machine_type = 'q35'
+  #  end
+  #  if ENV['TAILS_BUILD_CPU_MODEL']
+  #    domain.cpu_mode  = 'custom'
+  #    domain.cpu_model = ENV['TAILS_BUILD_CPU_MODEL']
+  #  else
+  #    domain.cpu_mode = 'host-passthrough'
+  #  end
+  #  domain.emulator_path = '/usr/bin/qemu-system-x86_64'
+  #  domain.memory = ENV['TAILS_RAM_BUILD'] ? VM_MEMORY_FOR_RAM_BUILDS :
+  #                                           VM_MEMORY_FOR_DISK_BUILDS
+  #  cpus = ENV['TAILS_BUILD_CPUS']
+  #  domain.cpus = cpus unless cpus.nil?
+  #  if ENV['TAILS_PROXY_TYPE' ] == 'vmproxy'
+  #    domain.storage(
+  #      :file, size: '15G', allow_existing: true,
+  #      path: 'apt-cacher-ng-data.qcow2'
+  #    )
+  #  end
+  #  if ENV['TAILS_WEBSITE_CACHE' ] == '1'
+  #    domain.storage(
+  #      :file, size: '5G', allow_existing: true,
+  #      path: 'tails-website-cache.qcow2'
+  #    )
+  #  end
+  #end
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
   # `vagrant box outdated`. This is not recommended.
