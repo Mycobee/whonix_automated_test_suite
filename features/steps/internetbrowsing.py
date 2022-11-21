@@ -1,6 +1,7 @@
 from behave import given, when, then
 from os import remove
 import subprocess
+import time
 from dogtail.procedural import *
 
 
@@ -10,6 +11,11 @@ def step_impl(context):
     if context.activeapplications['torbrowser'] is None:
         raise AssertionError("failed to detect the browser running, which is required for the test")  
     focus.application("torbrowser")
+
+@when('I wait for the page to finish loading')
+def step_impl(context): 
+    t = 30  
+    time.sleep(t)
 
 @when('we send the terminate signal to the browser')
 def step_impl(context):

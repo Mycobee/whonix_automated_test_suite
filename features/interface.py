@@ -21,6 +21,10 @@ def step_impl(context):
 @then('the tor browser closes successfully')
 def step_impl(context):
 
+#waits for the page to finish loading
+@given('I wait for the page to finish loading')
+def step_impl(context):
+
 ##################
 ###terminal.py
 ##################
@@ -112,11 +116,3 @@ def step_impl(context, keycombo):
 @when('I type "{text}"')
 def step_impl(context, text):
     
-
-
-
-
-
-
-
-
