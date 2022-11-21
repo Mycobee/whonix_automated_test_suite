@@ -14,7 +14,7 @@ def step_impl(context):
 
 @when('I wait for the page to finish loading')
 def step_impl(context): 
-    t = 30  
+    t = 60  
     time.sleep(t)
 
 @when('we send the terminate signal to the browser')
