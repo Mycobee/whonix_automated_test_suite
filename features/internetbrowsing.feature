@@ -12,7 +12,9 @@ Feature: internet browsing using the tor browser
   When I press the key combination "ctrl t"
   And I type "<webaddress>"
   And I press the key combination "Enter"
+  And I wait for the page to finish loading
   And I press the key combination "ctrl u"
+  And I wait for the page to finish loading
   And I press the key combination "ctrl s"
   And I type "websitetest"
   And I press the key combination "Enter"
@@ -22,7 +24,7 @@ Feature: internet browsing using the tor browser
   Examples:
    | webaddress | oracletext |
    | https://check.torproject.org | Congratulations. This browser is configured to use Tor. |
-   | http://dds6qkxpwdeubwucdiaord2xgbbeyds25rbsgr73tbfpqpt4a6vjwsyd.onion | https://www.whonix.org/wiki/Why_Whonix_is_Freedom_Software |
+   | http://dds6qkxpwdeubwucdiaord2xgbbeyds25rbsgr73tbfpqpt4a6vjwsyd.onion | wiki/Reasons_for_Freedom_Software |
 
  Scenario: Close the browser cleanly
   When I press the key combination "alt F4"
