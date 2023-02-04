@@ -32,6 +32,6 @@ from stock Whonix, first make sure you're up-to-date, then,
 
 `sudo apt-get install python3-pyatspi`
 
-`pip3 install dogtail` 
+`sudo apt-get install python3-dogtail`
 
 `gsettings set org.gnome.desktop.interface toolkit-accessibility true`
